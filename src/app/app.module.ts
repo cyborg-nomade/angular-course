@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
-import { SuccesstAlertComponent } from './successt-alert/successt-alert.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
 
 @NgModule({
-  declarations: [AppComponent, WarningAlertComponent, SuccesstAlertComponent],
+  declarations: [AppComponent, WarningAlertComponent, SuccessAlertComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent]
