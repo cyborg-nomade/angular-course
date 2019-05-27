@@ -1,3 +1,7 @@
+# About this repository
+
+This repository tracks my progress in the Angular 7 - The Complete Guide [course on Udemy](https://www.udemy.com/the-complete-guide-to-angular-2). Every class and asignment get its own branch. I will create a new repository to track the progress of the course-long project and link here
+
 # MyFirstApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
