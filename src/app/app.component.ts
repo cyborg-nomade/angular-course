@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   displayStatus = false;
-  clickCounter = 0;
+  clickCounter = [];
 
   onToggleDisplay() {
     this.displayStatus = !this.displayStatus;
-    this.clickCounter++;
+    this.clickCounter.push(this.clickCounter.length + 1);
   }
 
-  getColor() {
-    return this.clickCounter >= 5 ? 'blue' : 'none';
+  getColor(click: any) {
+    return click >= 5 ? 'blue' : 'none';
   }
 }
