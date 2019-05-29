@@ -11,10 +11,11 @@ export class AppComponent {
 
   onToggleDisplay() {
     this.displayStatus = !this.displayStatus;
-    this.clickCounter.push(this.clickCounter.length + 1);
+    // this.clickCounter.push(this.clickCounter.length + 1);
+    this.clickCounter.push(new Date());
   }
 
-  getColor(click: any) {
-    return click >= 5 ? 'blue' : 'none';
+  getColor(index: number) {
+    return index >= 5 ? 'blue' : 'none';
   }
 }

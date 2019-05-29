@@ -1,7 +1,7 @@
 <div class="container">
   <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
   <p *ngIf="displayStatus">Any content of my choice</p>
-  <p *ngFor="let click of clickCounter" [ngStyle]="{'background-color': getColor(click)}"
-    [ngClass]="{'five-plus': click >= 5}">
+  <p *ngFor="let click of clickCounter; let i = index" [ngStyle]="{'background-color': getColor(i)}"
+    [ngClass]="{'five-plus': i >= 5}">
     {{click}}</p>
 </div>
