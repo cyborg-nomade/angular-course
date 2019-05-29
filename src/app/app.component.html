@@ -1,4 +1,6 @@
 <div class="container">
   <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
   <p *ngIf="displayStatus">Any content of my choice</p>
+  <p [ngStyle]="{'background-color': getColor()}" [ngClass]="{'five-plus': clickCounter >= 5}">
+    {{clickCounter}}</p>
 </div>
