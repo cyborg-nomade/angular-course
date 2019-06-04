@@ -1,7 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <app-game-control (startEvent)="onGameStart($event)"></app-game-control>
+      <app-game-control (startEvent)="onGameStarted($event)"></app-game-control>
+    </div>
+    <div class="col-12">
+      <app-odd *ngFor="let on of oddN" [oddNumber]="on">
+        <p class="alert-danger">Odd: {{on}}</p>
+      </app-odd>
+    </div>
+    <div class="col-12">
+      <app-even *ngFor="let en of evenN" [evenNumber]="en">
+        <p class="alert-success">Even: {{en}}</p>
+      </app-even>
     </div>
   </div>
 </div>

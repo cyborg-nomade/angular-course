@@ -6,9 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  n = 0;
+  cummulator = 0;
+  numbers = [0];
+  oddN = [];
+  evenN = [0];
 
-  onGameStart(n: number) {
-    this.n = this.n + n;
+  onGameStarted(n: number) {
+    this.cummulator += n;
+    this.numbers.push(this.cummulator);
+
+    if (this.cummulator % 2) {
+      this.oddN.push(this.cummulator);
+    } else {
+      this.evenN.push(this.cummulator);
+    }
   }
 }
