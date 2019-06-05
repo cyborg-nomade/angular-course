@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class GameControlComponent implements OnInit {
   @Output() startEvent = new EventEmitter<number>();
-  timerId: NodeJS.Timer;
+  timerId: any;
 
   constructor() {}
 
