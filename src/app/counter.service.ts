@@ -4,6 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CounterService {
+  counter = 0;
 
-  constructor() { }
+  constructor() {}
+
+  incrementCounter() {
+    this.counter++;
+  }
 }

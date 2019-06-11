@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsersService } from './users.service';
+import { CounterService } from './counter.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { UsersService } from './users.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private userService: UsersService) {}
+  constructor(
+    private userService: UsersService,
+    public counterService: CounterService
+  ) {}
 }
