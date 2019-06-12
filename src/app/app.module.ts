@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { UserComponent } from './users/user/user.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { UserComponent } from './users/user/user.component';
     ServerComponent,
     UserComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
