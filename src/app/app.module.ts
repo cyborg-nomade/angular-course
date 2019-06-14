@@ -10,6 +10,7 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { UserComponent } from './users/user/user.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     UsersComponent,
     EditServerComponent,
     ServerComponent,
-    UserComponent
+    UserComponent,
+    PageNotFoundComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
