@@ -48,6 +48,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
+  // imports: [RouterModule.forRoot(appRoutes, { useHash: true })] // to indicate to servers to ignore anything before the #
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
