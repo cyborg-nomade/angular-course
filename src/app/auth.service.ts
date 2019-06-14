@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   loggedIn = false;
+  loginEvent = new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -19,9 +20,11 @@ export class AuthService {
 
   login() {
     this.loggedIn = true;
+    this.loginEvent.emit(true);
   }
 
   logout() {
     this.loggedIn = false;
+    this.loginEvent.emit(false);
   }
 }
