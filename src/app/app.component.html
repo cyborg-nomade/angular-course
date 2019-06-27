@@ -1,4 +1,3 @@
-develop branch
 <div class="container">
   <div class="row">
     <div class="col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
@@ -15,32 +14,31 @@ develop branch
 
             Upon submitting the form, simply print the value to the console
         -->
-      <form>
+      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="projectName">Project Name:</label>
-          <input type="text" class="form-control">
-          <div>
-            <span class="form-text text-muted alert-danger">This is not a valid name!</span>
-            <span class="form-text text-muted alert-danger">This field cannot be empty!</span>
+          <input type="text" class="form-control" formControlName="projectName">
+          <div *ngIf="!projectForm.get('projectName').valid && projectForm.get('projectName').touched">
+            <span class="form-text text-muted alert-danger"
+              *ngIf="projectForm.get('projectName').errors['nameForbidden']">This is not a valid name!</span>
+            <span class="form-text text-muted alert-danger"
+              *ngIf="projectForm.get('projectName').errors['required']">This field cannot be empty!</span>
           </div>
         </div>
         <div class="form-group">
           <label for="email">E-mail:</label>
-          <input type="email" class="form-control">
-          <div>
-            <span class="form-text text-muted alert-danger">This is not a valid email!</span>
-            <span class="form-text text-muted alert-danger">This field cannot be empty!</span>
+          <input type="email" class="form-control" formControlName="email">
+          <div *ngIf="!projectForm.get('email').valid && projectForm.get('email').touched">
+            This is not a valid email!
           </div>
         </div>
         <div class="form-group">
           <label for="email">Project Status:</label>
-          <select name="projectStatus" id="projectStatus" class="form-control">
-            <option value="stable">Stable</option>
-            <option value="critical">Critical</option>
-            <option value="finished">Finished</option>
+          <select name="projectStatus" id="projectStatus" class="form-control" formControlName="projectStatus">
+            <option value="{{status}}" *ngFor="let status of projectStatus">{{status}}</option>
           </select>
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
   </div>
