@@ -17,25 +17,53 @@
       <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="projectName">Project Name:</label>
-          <input type="text" class="form-control" formControlName="projectName">
-          <div *ngIf="!projectForm.get('projectName').valid && projectForm.get('projectName').touched">
-            <span class="form-text text-muted alert-danger"
-              *ngIf="projectForm.get('projectName').errors['nameForbidden']">This is not a valid name!</span>
-            <span class="form-text text-muted alert-danger"
-              *ngIf="projectForm.get('projectName').errors['required']">This field cannot be empty!</span>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="projectName"
+          />
+          <div
+            *ngIf="
+              !projectForm.get('projectName').valid &&
+              projectForm.get('projectName').touched
+            "
+          >
+            <span
+              class="form-text text-muted alert-danger"
+              *ngIf="projectForm.hasError('nameForbidden', 'projectName')"
+              >This is not a valid name!</span
+            >
+            <span
+              class="form-text text-muted alert-danger"
+              *ngIf="projectForm.hasError('required', 'projectName')"
+              >This field cannot be empty!</span
+            >
           </div>
         </div>
         <div class="form-group">
           <label for="email">E-mail:</label>
-          <input type="email" class="form-control" formControlName="email">
-          <div *ngIf="!projectForm.get('email').valid && projectForm.get('email').touched">
+          <input type="email" class="form-control" formControlName="email" />
+          <div
+            class="form-text text-muted alert-danger"
+            *ngIf="
+              !projectForm.get('email').valid &&
+              projectForm.get('email').touched
+            "
+          >
             This is not a valid email!
           </div>
         </div>
         <div class="form-group">
           <label for="email">Project Status:</label>
-          <select name="projectStatus" id="projectStatus" class="form-control" formControlName="projectStatus">
-            <option value="{{status}}" *ngFor="let status of projectStatus">{{status}}</option>
+          <select
+            name="projectStatus"
+            id="projectStatus"
+            class="form-control"
+            formControlName="projectStatus"
+          >
+            <option value="{{ status }}" *ngFor="let status of projectStatus">{{
+              status
+            }}</option>
           </select>
         </div>
         <button class="btn btn-primary" type="submit">Submit</button>
