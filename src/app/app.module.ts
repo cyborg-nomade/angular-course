@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ShortenPipe } from './shorten.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, ShortenPipe],
+  declarations: [AppComponent, ShortenPipe, FilterPipe],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
