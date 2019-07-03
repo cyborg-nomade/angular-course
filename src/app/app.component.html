@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-sm-10 col-md-10 offset-sm-1 offset-md-1">
-      <input type="text" [(ngModel)]="filteredStatus">
+      <div class="input-group mb-3">
+        <input type="text" [(ngModel)]="filteredStatus" class="form-control">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+        </div>
+      </div>
       <hr>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let server of servers | filter:filteredStatus:'status'"
