@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   loadedPosts: Post[] = [];
+  isFecthing = false;
 
   constructor(private http: HttpClient) {}
 
@@ -38,6 +39,7 @@ export class AppComponent implements OnInit {
   }
 
   private fetchPosts() {
+    this.isFecthing = true;
     this.http
       .get<{ [key: string]: Post }>(
         'https://ng-complete-guide-ef70f.firebaseio.com/posts.json'
@@ -54,6 +56,7 @@ export class AppComponent implements OnInit {
         })
       )
       .subscribe(posts => {
+        this.isFecthing = false;
         this.loadedPosts = posts;
       });
   }
