@@ -61,12 +61,10 @@ export class PostService {
 
   deletePosts() {
     return this.http
-      .delete<{ [key: string]: Post }>(
-        'https://ng-complete-guide-ef70f.firebaseio.com/posts.json',
-        {
-          observe: 'events'
-        }
-      )
+      .delete('https://ng-complete-guide-ef70f.firebaseio.com/posts.json', {
+        observe: 'events',
+        responseType: 'text'
+      })
       .pipe(
         tap(event => {
           console.log(event);
