@@ -14,14 +14,10 @@ export class PostService {
       title,
       content
     };
-    this.http
-      .post<{ name: string }>(
-        'https://ng-complete-guide-ef70f.firebaseio.com/posts.json',
-        postData
-      )
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+    return this.http.post<{ name: string }>(
+      'https://ng-complete-guide-ef70f.firebaseio.com/posts.json',
+      postData
+    );
   }
 
   fetchPosts() {
@@ -40,5 +36,11 @@ export class PostService {
           return postsArray;
         })
       );
+  }
+
+  deletePosts() {
+    return this.http.delete<{ [key: string]: Post }>(
+      'https://ng-complete-guide-ef70f.firebaseio.com/posts.json'
+    );
   }
 }
